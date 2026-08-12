@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PedagogiAfrica | Dr. Nezzal Abdelmalek - Santé au Travail & E-Learning</title>
+  <meta name="description" content="Plateforme de formation, mentorat et communauté d'échanges en Santé au Travail, E-Learning, Pédagogie et Intelligence Artificielle par le Dr. Nezzal Abdelmalek." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="dr_nezzal.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=2" />
+
+  <!-- LinkedIn Official Badge SDK -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#accueil" class="nav-brand">
+        <div class="nav-logo-icon">PA</div>
+        <span>PedagogiAfrica</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+        <li><a href="#communaute" class="nav-link">Communauté Moodle</a></li>
+        <li><a href="#mentorat" class="nav-link">Formations & Mentorat</a></li>
+        <li><a href="#a-propos" class="nav-link">À Propos</a></li>
+        <li><a href="#medias" class="nav-link">YouTube & Blog</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button class="btn btn-primary btn-open-modal" data-modal-type="moodle">
+          <i class="fa-solid fa-key"></i> Demander un Accès
+        </button>
+        <button class="mobile-toggle" aria-label="Ouvrir le menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+
+    <!-- 1. Hero Section -->
+    <section id="accueil" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge">
+            <span class="badge-pulse"></span>
+            Communauté & Hub d'Apprentissage Actif
+          </div>
+          <h1 class="hero-title">
+            L'Excellence du <span>Mentorat</span> & du <span>E-Learning</span> en Santé au Travail
+          </h1>
+          <p class="hero-description">
+            Bienvenue sur PedagogiAfrica. Un écosystème conçu pour accompagner les médecins d'entreprise, former aux méthodes pédagogiques modernes et partager des ressources innovantes en E-Learning et Intelligence Artificielle.
+          </p>
+
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-open-modal" data-modal-type="moodle">
+              <i class="fa-solid fa-id-card"></i> Demander un Accès au Moodle
+            </button>
+            <a href="https://formation.pedagogiafrica.org/course/view.php?id=31" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-solid fa-right-to-bracket"></i> Déjà Membre ? Connexion
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>+200</h4>
+              <p>Vidéos YouTube</p>
+            </div>
+            <div class="stat-item">
+              <h4>1.79k</h4>
+              <p>Abonnés Passionnés</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Accompagnement Sur-Mesure</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <div class="hero-img-bg">
+              <img src="dr_nezzal.png" alt="Dr. Nezzal Abdelmalek" class="dr-img" />
+            </div>
+
+            <!-- Floating Badge 1 -->
+            <div class="floating-badge badge-1">
+              <div class="badge-icon blue">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+              <div class="badge-text">
+                <h5>Dr. Nezzal Abdelmalek</h5>
+                <p>Médecine du Travail & Pédagogie</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-badge badge-2">
+              <div class="badge-icon emerald">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div class="badge-text">
+                <h5>Hub Moodle & Échanges</h5>
+                <p>Forums & Ressources Interactives</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Hub Communauté Moodle Section -->
+    <section id="communaute" class="moodle-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Espace Dédié</div>
+          <h2 class="section-title">Espace <span>Communauté & Échanges</span></h2>
+          <p class="section-subtitle">
+            Toutes vos ressources, cours, vidéos, forums et outils réunis au même endroit sur notre plateforme Moodle interactive.
+          </p>
+        </div>
+
+        <!-- Callout Banner -->
+        <div class="moodle-banner">
+          <div class="moodle-banner-grid">
+            <div class="moodle-banner-content">
+              <h3>Un Espace d'Apprentissage Vivant & Collaboratif</h3>
+              <p>
+                Inspiré des meilleures communautés modernes d'apprentissage, cet espace rassemble médecins, enseignants et apprenants pour échanger, se former et progresser ensemble.
+              </p>
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn btn-accent btn-open-modal" data-modal-type="moodle">
+                  <i class="fa-solid fa-user-plus"></i> Obtenir mes identifiants
+                </button>
+                <a href="https://formation.pedagogiafrica.org/course/view.php?id=31" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.25);">
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i> Accéder au Moodle
+                </a>
+              </div>
+            </div>
+
+            <div class="moodle-card-preview">
+              <h4><i class="fa-solid fa-layer-group"></i> Architecture du Hub :</h4>
+              <ul class="moodle-pillar-list">
+                <li class="moodle-pillar-item">
+                  <i class="fa-solid fa-bullhorn" style="color: #60a5fa;"></i>
+                  <span><strong>Généralités & Annonces</strong> - Informations clés</span>
+                </li>
+                <li class="moodle-pillar-item">
+                  <i class="fa-solid fa-comments" style="color: #34d399;"></i>
+                  <span><strong>Fil d'Actualités & Discussions</strong> - Échanges directs</span>
+                </li>
+                <li class="moodle-pillar-item">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #fbbf24;"></i>
+                  <span><strong>Classroom & Formations</strong> - Cours & Modules</span>
+                </li>
+                <li class="moodle-pillar-item">
+                  <i class="fa-solid fa-calendar-days" style="color: #c084fc;"></i>
+                  <span><strong>Événements & Lives</strong> - Sessions en direct</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Grid Cards -->
+        <div class="moodle-grid">
+          <div class="feature-card">
+            <div class="feature-icon icon-blue">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h4>Fil d'Actualités & Discussions</h4>
+            <p>Posez vos questions, partagez vos études de cas réels en santé au travail et interagissez avec la communauté.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-emerald">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <h4>Classroom & Formations</h4>
+            <p>Accédez à un catalogue structuré de cours en ligne : Pédagogie, Santé au Travail, Elearning et outils IA.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-amber">
+              <i class="fa-solid fa-video"></i>
+            </div>
+            <h4>Événements & Lives</h4>
+            <p>Participez à des ateliers virtuels, conférences et webinaires thématiques animés en direct.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon icon-purple">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h4>Outils & Applications</h4>
+            <p>Téléchargez des modèles de protocoles, générateurs de méthodologie et calculateurs spécialisés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Formations & Mentorat Section -->
+    <section id="mentorat">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Accompagnement Sur-Mesure</div>
+          <h2 class="section-title">Formations & <span>Mentorat Professionnel</span></h2>
+          <p class="section-subtitle">
+            Des programmes conçus pour développer votre posture, votre organisation et vos compétences cliniques et pédagogiques.
+          </p>
+        </div>
+
+        <div class="offerings-grid">
+          <!-- Card 1: Mentorat -->
+          <div class="mentorat-card">
+            <div>
+              <div class="badge" style="background: rgba(16, 185, 129, 0.1); color: #059669; border-color: rgba(16, 185, 129, 0.2);">
+                <i class="fa-solid fa-user-shield"></i> Accompagnement Individuel
+              </div>
+              <h3>Mentorat en Santé au Travail</h3>
+              <p>Séances d'accompagnement sur-mesure avec le Pr. Nezzal Abdelmalek :</p>
+              
+              <ul class="benefit-list">
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Médecins habilités & d'entreprise :</strong> Mieux vous organiser et intervenir efficacement en milieu professionnel.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Méthodes & Posture :</strong> Acquérir les outils et relations pour vous affirmer face aux salariés, cadres et dirigeants.</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span><strong>Gestion de Service :</strong> Résoudre les difficultés organisationnelles, relationnelles et de management d'équipe.</span>
+                </li>
+              </ul>
+            </div>
+
+            <button class="btn btn-primary btn-open-modal" data-modal-type="mentorat" style="width: 100%;">
+              <i class="fa-solid fa-calendar-check"></i> Demander un entretien de Mentorat
+            </button>
+          </div>
+
+          <!-- Card 2: Formations -->
+          <div class="mentorat-card">
+            <div>
+              <div class="badge">
+                <i class="fa-solid fa-laptop-code"></i> Modules en Ligne
+              </div>
+              <h3>Domaines de Formation</h3>
+              <p>Des modules pédagogiques interactifs adaptés aux défis contemporains :</p>
+
+              <div class="courses-pills">
+                <div class="course-pill"><i class="fa-solid fa-heart-pulse" style="color: #ef4444;"></i> Santé au travail</div>
+                <div class="course-pill"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Pédagogie médicale</div>
+                <div class="course-pill"><i class="fa-solid fa-computer" style="color: #3b82f6;"></i> E-Learning</div>
+                <div class="course-pill"><i class="fa-solid fa-robot" style="color: #8b5cf6;"></i> Intelligence Artificielle</div>
+                <div class="course-pill"><i class="fa-solid fa-sitemap" style="color: #10b981;"></i> Organisation & Management</div>
+              </div>
+
+              <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-muted);">
+                Chaque module associe vidéos explicatives, supports téléchargeables et forums de discussion dédiés.
+              </p>
+            </div>
+
+            <button class="btn btn-secondary btn-open-modal" data-modal-type="moodle" style="width: 100%; margin-top: 2rem;">
+              <i class="fa-solid fa-list-check"></i> Accéder au Catalogue des Cours
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. À Propos Section -->
+    <section id="a-propos" class="about-section">
+      <div class="container about-grid">
+        <div class="about-image-card">
+          <img src="dr_nezzal.png" alt="Dr. Nezzal Abdelmalek" class="about-img" />
+          <div class="about-bio-badge" style="position: relative !important; bottom: auto !important; left: auto !important; right: auto !important; margin-top: 1rem !important;">
+            <h5>Dr. Nezzal Abdelmalek</h5>
+            <p>Fondateur de PedagogiAfrica | Médecin & Formateur</p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="badge">Parcours & Vision</div>
+          <h2>Transmettre, Innover et Accompagner</h2>
+          <p>
+            Médecin passionné par la santé au travail et l'ingénierie pédagogique, j'ai créé <strong>PedagogiAfrica</strong> avec une conviction forte : la formation continue et l'accès au savoir doivent être simples, modernes et collaboratifs.
+          </p>
+          <p>
+            Mon engagement est d'aider les professionnels de santé et les éducateurs à structurer leur pratique, maîtriser les nouveaux outils technologiques (comme l'IA et les plateformes e-learning) et s'affirmer dans leur rôle d'experts auprès des organisations.
+          </p>
+
+          <div class="quote-box">
+            <p>« Rendons l'apprentissage accessible et le mentorat concret pour chaque professionnel. »</p>
+            <span>— Dr. Nezzal Abdelmalek</span>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; align-items: center;">
+            <a href="https://dz.linkedin.com/in/nezzalabdelmalek?trk=profile-badge" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> Profil LinkedIn
+            </a>
+            <a href="https://www.youtube.com/@AbdelmalekNezzal" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Chaîne YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Médias & Ressources (YouTube & Substack) -->
+    <section id="medias">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Ressources en Libre Accès</div>
+          <h2 class="section-title">Chaine <span>YouTube</span> & Articles <span>Substack</span></h2>
+          <p class="section-subtitle">
+            Retrouvez régulièrement mes tutoriels vidéos, décryptages et réflexions écrites.
+          </p>
+        </div>
+
+        <div class="media-grid">
+          <!-- YouTube Card -->
+          <div class="media-card">
+            <div>
+              <div class="media-header">
+                <div class="media-icon youtube">
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="media-header-text">
+                  <h3>PedagogiAfrica sur YouTube</h3>
+                  <p>1,79k abonnés • +200 vidéos gratuites</p>
+                </div>
+              </div>
+
+              <p class="media-description">
+                Des explications en vidéo sur la méthodologie de recherche clinique, les protocoles de santé au travail, les règles de sécurité et l'usage pédagogique de l'IA.
+              </p>
+
+              <div class="video-tags">
+                <span class="tag">Méthodo & Clinique</span>
+                <span class="tag">Générateur de Protocole</span>
+                <span class="tag">Sécurité & Ergonomie</span>
+                <span class="tag">Intelligence Artificielle</span>
+              </div>
+            </div>
+
+            <a href="https://www.youtube.com/@AbdelmalekNezzal" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+              <i class="fa-brands fa-youtube"></i> S'abonner sur YouTube
+            </a>
+          </div>
+
+          <!-- Substack Card -->
+          <div class="media-card">
+            <div>
+              <div class="media-header">
+                <div class="media-icon substack">
+                  <i class="fa-solid fa-newspaper"></i>
+                </div>
+                <div class="media-header-text">
+                  <h3>Le Blog Substack</h3>
+                  <p>Articles de fond & Analyses</p>
+                </div>
+              </div>
+
+              <p class="media-description">
+                Je publie désormais mes réflexions, guides d'organisation et analyses de fond directement sur Substack. Abonnez-vous pour recevoir mes nouveaux billets par e-mail.
+              </p>
+
+              <div class="video-tags">
+                <span class="tag">Santé au travail</span>
+                <span class="tag">Ingénierie Pédagogique</span>
+                <span class="tag">Ressources & Guides</span>
+              </div>
+            </div>
+
+            <a href="https://nezzal.substack.com/" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Lire le Blog sur Substack
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Demande d'Accès Moodle -->
+  <div id="modal-acces" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="badge"><i class="fa-solid fa-key"></i> Espace Membres Moodle</div>
+        <h3>Demande d'Accès au Hub</h3>
+        <p>Remplissez ce formulaire pour recevoir vos identifiants d'accès par e-mail.</p>
+      </div>
+
+      <form id="form-acces" class="acces-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom" />
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse E-mail professionnelle *</label>
+          <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="profil">Profil / Profession *</label>
+          <select id="profil" name="profil" required>
+            <option value="" disabled selected>Sélectionnez votre profil...</option>
+            <option value="Médecin d'entreprise">Médecin d'entreprise</option>
+            <option value="Médecin habilité">Médecin habilité</option>
+            <option value="Gestionnaire de service de santé">Gestionnaire de service de santé</option>
+            <option value="Enseignant / Formateur">Enseignant / Formateur</option>
+            <option value="Autre professionnel">Autre professionnel de santé</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message ou besoins spécifiques (Optionnel)</label>
+          <textarea id="message" name="message" rows="3" placeholder="Précisez vos attentes ou questions..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d'accès
+        </button>
+      </form>
+
+      <div id="form-success" class="form-success" style="display: none;">
+        <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: #10b981; margin-bottom: 1rem;"></i>
+        <h4>Demande enregistrée avec succès !</h4>
+        <p>Merci <strong id="user-firstname"></strong>. Votre demande a bien été envoyée au Dr. Nezzal Abdelmalek. Vos accès Moodle vous seront envoyés à l'adresse e-mail indiquée.</p>
+        <button type="button" class="btn btn-secondary btn-close-success" style="margin-top: 1.5rem;">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>PedagogiAfrica</h3>
+          <p>
+            Plateforme d'échanges, de formation et de mentorat en Santé au Travail, E-Learning et Pédagogie Médicale animée par le Dr. Nezzal Abdelmalek.
+          </p>
+
+          <div class="social-links">
+            <a href="https://www.youtube.com/@AbdelmalekNezzal" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://dz.linkedin.com/in/nezzalabdelmalek?trk=profile-badge" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://nezzal.substack.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Substack">
+              <i class="fa-solid fa-newspaper"></i>
+            </a>
+            <a href="mailto:pedagogia@pedagogiafrica.org" class="social-btn" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation Rapide</h4>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#communaute">Communauté Moodle</a></li>
+            <li><a href="#mentorat">Mentorat & Formations</a></li>
+            <li><a href="#a-propos">À Propos du Dr. Nezzal</a></li>
+            <li><a href="#medias">YouTube & Substack</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Espace Membres</h4>
+          <ul class="footer-links">
+            <li><a href="https://formation.pedagogiafrica.org/course/view.php?id=31" target="_blank" rel="noopener noreferrer">Connexion Directe Moodle</a></li>
+            <li><a href="#" class="btn-open-modal" data-modal-type="moodle">Formulaire de Demande d'Accès</a></li>
+            <li><a href="mailto:pedagogia@pedagogiafrica.org">Contact direct par e-mail</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PedagogiAfrica - Dr. Nezzal Abdelmalek. Tous droits réservés.</p>
+        <p>Elearning is easy !</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
