@@ -19,12 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const userFirstnameSpan = document.getElementById('user-firstname');
 
   // Modal Header & Button Elements for Contextual Adaptation
-  const modalBadge = modal.querySelector('.modal-header .badge');
-  const modalTitle = modal.querySelector('.modal-header h3');
-  const modalSubtitle = modal.querySelector('.modal-header p');
-  const modalSubmitBtn = formAcces.querySelector('button[type="submit"]');
+  const modalBadge = modal ? modal.querySelector('.modal-header .badge') : null;
+  const modalTitle = modal ? modal.querySelector('.modal-header h3') : null;
+  const modalSubtitle = modal ? modal.querySelector('.modal-header p') : null;
+  const modalSubmitBtn = formAcces ? formAcces.querySelector('button[type="submit"]') : null;
 
   let currentModalType = 'moodle';
+  let lastFocusedElement = null;
+
+  // Focusable elements inside modal selector
+  const getFocusableModalElements = () => {
+    if (!modal) return [];
+    return Array.from(
+      modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter(el => !el.hasAttribute('disabled') && el.offsetWidth > 0 && el.offsetHeight > 0);
+  };
 
   // Header Scroll Effect & ScrollSpy
   window.addEventListener('scroll', () => {
@@ -54,11 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile Menu Toggle
   if (mobileToggle) {
     mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+      const isOpen = navMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       const icon = mobileToggle.querySelector('i');
       if (icon) {
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
+        icon.classList.toggle('fa-bars', !isOpen);
+        icon.classList.toggle('fa-xmark', isOpen);
       }
     });
   }
@@ -68,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       if (navMenu.classList.contains('open')) {
         navMenu.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
         const icon = mobileToggle.querySelector('i');
         if (icon) {
           icon.classList.add('fa-bars');
@@ -81,34 +92,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const openModal = (e) => {
     if (e) e.preventDefault();
 
-    const triggerBtn = e.currentTarget;
+    lastFocusedElement = document.activeElement;
+    const triggerBtn = e ? e.currentTarget : null;
     const modalType = triggerBtn ? triggerBtn.getAttribute('data-modal-type') || 'moodle' : 'moodle';
     currentModalType = modalType;
 
     if (modalType === 'mentorat') {
-      modalBadge.innerHTML = '<i class="fa-solid fa-stethoscope"></i> Mentorat Sur-Mesure';
-      modalTitle.textContent = "Demande d'Entretien de Mentorat";
-      modalSubtitle.textContent = "Remplissez ce formulaire pour réserver votre séance d'identification de vos besoins d'accompagnement avec le Pr. Nezzal Abdelmalek.";
-      modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Réserver mon entretien de Mentorat';
+      if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-stethoscope"></i> Mentorat Sur-Mesure';
+      if (modalTitle) modalTitle.textContent = "Demande d'Entretien de Mentorat";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour réserver votre séance d'identification de vos besoins d'accompagnement avec le Pr. Nezzal Abdelmalek.";
+      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Réserver mon entretien de Mentorat';
     } else {
-      modalBadge.innerHTML = '<i class="fa-solid fa-key"></i> Espace Membres Moodle';
-      modalTitle.textContent = "Demande d'Accès au Hub Moodle";
-      modalSubtitle.textContent = "Remplissez ce formulaire pour recevoir vos identifiants d'accès par e-mail.";
-      modalSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d\'accès';
+      if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-key"></i> Espace Membres Moodle';
+      if (modalTitle) modalTitle.textContent = "Demande d'Accès au Hub Moodle";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour recevoir vos identifiants d'accès par e-mail.";
+      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d\'accès';
     }
 
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    if (modal) {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // Set focus to the first input in form
+      const firstInput = document.getElementById('nom');
+      if (firstInput) {
+        setTimeout(() => firstInput.focus(), 100);
+      }
+    }
   };
 
   const closeModal = () => {
+    if (!modal) return;
     modal.classList.remove('open');
     document.body.style.overflow = '';
+
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
+
     // Reset form after closing
     setTimeout(() => {
-      formAcces.style.display = 'flex';
-      formSuccess.style.display = 'none';
-      formAcces.reset();
+      if (formAcces) formAcces.style.display = 'flex';
+      if (formSuccess) formSuccess.style.display = 'none';
+      if (formAcces) formAcces.reset();
     }, 400);
   };
 
@@ -120,11 +146,43 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
 
   // Close modal when clicking outside content
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Keyboard navigation inside modal (Focus Trap & Escape key)
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusables = getFocusableModalElements();
+        if (focusables.length === 0) return;
+
+        const firstElement = focusables[0];
+        const lastElement = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+  }
 
   // Handle Form Submission
   if (formAcces) {
@@ -138,9 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('message').value.trim();
 
       // Show Success state
-      userFirstnameSpan.textContent = prenom;
+      if (userFirstnameSpan) userFirstnameSpan.textContent = prenom;
       formAcces.style.display = 'none';
-      formSuccess.style.display = 'block';
+      if (formSuccess) formSuccess.style.display = 'block';
 
       // Customize Subject and Email Body depending on Context (Mentorat vs Moodle)
       const isMentorat = currentModalType === 'mentorat';
@@ -154,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const subject = encodeURIComponent(subjectText);
       const body = encodeURIComponent(
-        `Bonjour Dr. Nezzal Abdelmalek,\n\n${introText}\n\n` +
+        `Bonjour Pr. Nezzal Abdelmalek,\n\n${introText}\n\n` +
         `• Nom : ${nom}\n` +
         `• Prénom : ${prenom}\n` +
         `• E-mail : ${email}\n` +
@@ -170,3 +228,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
