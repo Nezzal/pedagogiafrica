@@ -97,7 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalType = triggerBtn ? triggerBtn.getAttribute('data-modal-type') || 'moodle' : 'moodle';
     currentModalType = modalType;
 
-    if (modalType === 'mentorat') {
+    if (modalType === 'prevention') {
+      if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Prévention des Risques';
+      if (modalTitle) modalTitle.textContent = "Demande d'Entretien de Prévention";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire avec vos coordonnées professionnelles pour réserver votre entretien d'évaluation et de prévention des risques avec le Pr. Nezzal Abdelmalek.";
+      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Demander mon entretien de Prévention';
+    } else if (modalType === 'mentorat') {
       if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-stethoscope"></i> Mentorat Sur-Mesure';
       if (modalTitle) modalTitle.textContent = "Demande d'Entretien de Mentorat";
       if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour réserver votre séance d'identification de vos besoins d'accompagnement avec le Pr. Nezzal Abdelmalek.";
@@ -200,15 +205,17 @@ document.addEventListener('DOMContentLoaded', () => {
       formAcces.style.display = 'none';
       if (formSuccess) formSuccess.style.display = 'block';
 
-      // Customize Subject and Email Body depending on Context (Mentorat vs Moodle)
-      const isMentorat = currentModalType === 'mentorat';
-      const subjectText = isMentorat 
-        ? `Demande d'Entretien de Mentorat - ${prenom} ${nom}`
-        : `Demande d'accès Moodle - ${prenom} ${nom}`;
+      // Customize Subject and Email Body depending on Context (Prevention vs Mentorat vs Moodle)
+      let subjectText = `Demande d'accès Moodle - ${prenom} ${nom}`;
+      let introText = `Voici une nouvelle demande d'accès à la plateforme Moodle PedagogiAfrica :`;
 
-      const introText = isMentorat
-        ? `Voici une nouvelle demande d'entretien d'identification des besoins d'accompagnement :`
-        : `Voici une nouvelle demande d'accès à la plateforme Moodle PedagogiAfrica :`;
+      if (currentModalType === 'prevention') {
+        subjectText = `Demande d'Entretien Prévention des Risques - ${prenom} ${nom}`;
+        introText = `Voici une nouvelle demande d'entretien sur la Prévention des risques professionnels en entreprise :`;
+      } else if (currentModalType === 'mentorat') {
+        subjectText = `Demande d'Entretien de Mentorat - ${prenom} ${nom}`;
+        introText = `Voici une nouvelle demande d'entretien d'identification des besoins d'accompagnement :`;
+      }
 
       const subject = encodeURIComponent(subjectText);
       const body = encodeURIComponent(
