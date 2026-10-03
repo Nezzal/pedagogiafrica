@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 
   <!-- LinkedIn Official Badge SDK -->
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
@@ -391,7 +391,7 @@
               </div>
             </div>
 
-            <div class="prevention-card prevention-card-wide">
+            <div class="prevention-card">
               <div class="prevention-card-icon icon-purple">
                 <i class="fa-solid fa-users-gear"></i>
               </div>
@@ -400,13 +400,22 @@
                 <p><strong>Développer une culture de prévention :</strong> information, formation et implication des travailleurs et des acteurs de l’entreprise.</p>
               </div>
             </div>
-          </div>
 
-          <!-- Appel à l'action : Demande d'entretien -->
-          <div class="prevention-cta-wrapper">
-            <button class="btn btn-primary btn-open-modal" data-modal-type="prevention">
-              <i class="fa-solid fa-calendar-check"></i> Demander un entretien de Prévention des Risques
-            </button>
+            <!-- Troisième panneau : Appel à l'action pour équilibrer les 3 colonnes -->
+            <div class="prevention-card prevention-card-cta">
+              <div style="display: flex; align-items: flex-start; gap: 1.25rem;">
+                <div class="prevention-card-icon icon-blue">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="prevention-card-content">
+                  <h4>Accompagnement Dédié</h4>
+                  <p><strong>Entretien de prévention personnalisé :</strong> échangez sur vos besoins pour bâtir votre démarche de prévention sur-mesure.</p>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-open-modal" data-modal-type="prevention" style="width: 100%; margin-top: 1.2rem; font-size: 0.925rem; padding: 0.75rem 1rem;">
+                <i class="fa-solid fa-calendar-check"></i> Demander un entretien
+              </button>
+            </div>
           </div>
         </div>
       </div>

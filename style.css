@@ -768,14 +768,9 @@ section {
   line-height: 1.6;
 }
 
-.prevention-cta-wrapper {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-
 .prevention-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -797,8 +792,18 @@ section {
   border-color: rgba(37, 99, 235, 0.3);
 }
 
-.prevention-card-wide {
-  grid-column: 1 / -1;
+.prevention-card-cta {
+  background: linear-gradient(145deg, #eff6ff 0%, #ffffff 100%);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prevention-card-cta:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.18);
 }
 
 .prevention-card-icon {
@@ -1232,9 +1237,9 @@ footer {
 
 /* Responsive Media Queries */
 @media (max-width: 992px) {
-  .hero-grid, .about-grid, .moodle-banner-grid, .media-grid {
+  .hero-grid, .about-grid, .moodle-banner-grid, .media-grid, .prevention-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .floating-badge.badge-1 { top: 5%; left: 0%; }
