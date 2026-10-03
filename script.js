@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Trigger mailto after brief delay
       setTimeout(() => {
-        window.location.href = `mailto:pedagogia@pedagogiafrica.org?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:pedagogiafrica@gmail.com?subject=${subject}&body=${body}`;
       }, 800);
     });
   }
