@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalType === 'prevention') {
       if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Prévention des Risques';
-      if (modalTitle) modalTitle.textContent = "Demande d'entretien Prévention";
-      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour recevoir un mail du Pr Nezzal Abdelmalek";
-      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Demander mon entretien de Prévention';
+      if (modalTitle) modalTitle.textContent = "Demande d'un entretien Prévention";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour obtenir les coordonnées d'un entretien par visioconférence ou téléphone dans votre e-mail.";
+      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d\'entretien';
       const profilSelect = document.getElementById('profil');
       if (profilSelect) {
         profilSelect.value = "Gestionnaire, Responsable HSE";
@@ -112,10 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour réserver votre séance d'identification de vos besoins d'accompagnement avec le Pr. Nezzal Abdelmalek.";
       if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Réserver mon entretien de Mentorat';
     } else {
-      if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-key"></i> Espace Membres Moodle';
-      if (modalTitle) modalTitle.textContent = "Demande d'Accès au Hub Moodle";
-      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour recevoir vos identifiants d'accès par e-mail.";
-      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d\'accès';
+      if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Prévention des Risques';
+      if (modalTitle) modalTitle.textContent = "Demande d'un entretien Prévention";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour obtenir les coordonnées d'un entretien par visioconférence ou téléphone dans votre e-mail.";
+      if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Transmettre ma demande d\'entretien';
+      const profilSelect = document.getElementById('profil');
+      if (profilSelect) {
+        profilSelect.value = "Gestionnaire, Responsable HSE";
+      }
     }
 
     if (modal) {
