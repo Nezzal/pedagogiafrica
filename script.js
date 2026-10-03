@@ -99,9 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalType === 'prevention') {
       if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-shield-halved"></i> Prévention des Risques';
-      if (modalTitle) modalTitle.textContent = "Demande d'Entretien de Prévention";
-      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire avec vos coordonnées professionnelles pour réserver votre entretien d'évaluation et de prévention des risques avec le Pr. Nezzal Abdelmalek.";
+      if (modalTitle) modalTitle.textContent = "Demande d'entretien Prévention";
+      if (modalSubtitle) modalSubtitle.textContent = "Remplissez ce formulaire pour recevoir un mail du Pr Nezzal Abdelmalek";
       if (modalSubmitBtn) modalSubmitBtn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Demander mon entretien de Prévention';
+      const profilSelect = document.getElementById('profil');
+      if (profilSelect) {
+        profilSelect.value = "Gestionnaire, Responsable HSE";
+      }
     } else if (modalType === 'mentorat') {
       if (modalBadge) modalBadge.innerHTML = '<i class="fa-solid fa-stethoscope"></i> Mentorat Sur-Mesure';
       if (modalTitle) modalTitle.textContent = "Demande d'Entretien de Mentorat";
